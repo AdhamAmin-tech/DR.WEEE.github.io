@@ -1,0 +1,188 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>دكتور وي </title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Tajawal', sans-serif;
+      transition: background-color 0.5s, color 0.5s;
+    }
+    h1, h2, h3, h4 {
+      font-weight: 800;
+    }
+    #switchCircle {
+      left: 0.25rem;
+      transition: left 0.3s ease-in-out;
+    }
+    .dark #switchCircle {
+      left: calc(100% - 2rem) !important;
+    }
+    html.dark #switchCircle {
+      left: calc(100% - 28px) !important;
+    }
+    nav h1 {
+      position: relative;
+      top: -4px;
+      right: -10px;
+    }
+  </style>
+</head>
+
+<body class="bg-gradient-to-b from-green-50 to-white dark:from-gray-900 dark:to-gray-800 text-gray-800 dark:text-gray-100 transition duration-500 ease-in-out">
+<div class="container mx-auto px-4">
+  <!-- content -->
+</div>
+  <!-- 🔹 Navigation -->
+ <nav class="bg-white dark:bg-gray-900 shadow p-4 flex justify-between items-center transition">
+  <!-- Right side: logo and links -->
+  <div class="flex items-center gap-6">
+    <h1 class="text-2xl font-bold text-green-700 dark:text-green-300 transition">
+	<a href="index.html">دكتور وي</a></h1>
+    <ul class="flex gap-5 text-sm md:text-base">
+      <li><a href="index.html">الرئيسية</a></li>
+      <li><a href="about.html">من نحن</a></li>
+      <li><a href="services.html">الخدمات</a></li>
+      <li><a href="franchise.html">الفرنشايز</a></li>
+      <li><a href="contact.html">اتصل بنا</a></li>
+    </ul>
+  </div>
+  
+
+  <!-- Left side: the switch -->
+  <div class="relative block w-16 h-8 cursor-pointer">
+    <label class="relative block w-16 h-8 cursor-pointer">
+      <input type="checkbox" id="themeToggle" class="sr-only" onchange="toggleDarkMode()">
+      <div class="w-full h-full bg-gray-300 dark:bg-gray-600 rounded-full relative">
+        <span id="moonIcon" class="absolute left-1 top-[6px] text-white-400 text-base leading-none">🌙</span>
+        <span id="sunIcon" class="absolute right-1 top-[6px] text-yellow-400 text-base leading-none">🌞</span>
+        <div id="switchCircle" class="w-6 h-6 bg-white absolute top-1 left-[4px] rounded-full shadow-md transition-all duration-300"></div>
+      </div>
+    </label>
+  </div>
+</nav>
+
+  <!-- 🔹 Hero Section -->
+  <section class="text-center py-16 px-6 transition">
+    <h2 class="text-3xl md:text-5xl font-extrabold mb-4 text-green-800 dark:text-green-300 transition">🌱 نحو مستقبل أخضر مستدام</h2>
+    <p class="text-lg mb-6">نقدم حلولاً متكاملة لإعادة تدوير المخلفات الإلكترونية وخراطيش الأحبار</p>
+    <div class="flex flex-col md:flex-row justify-center gap-4">
+      <a class="bg-green-600 text-white px-6 py-3 rounded-full hover:bg-green-700 transition" href="services.html">استكشف خدماتنا</a>
+      <a class="bg-white text-green-700 border border-green-600 px-6 py-3 rounded-full hover:bg-gray-100 transition dark:bg-gray-900 dark:text-white dark:border-green-400 dark:hover:bg-gray-800" href="footprint.html">احسب بصمتك الكربونية</a>
+    </div>
+  </section>
+
+  <!-- 🔹 Vision & Mission -->
+  <section class="py-12 px-6 text-center transition">
+    <h3 class="text-2xl font-bold mb-6">🎯 الرؤية , 🚀 الرسالة , 🏆 الهدف</h3>
+    <div class="grid md:grid-cols-3 gap-6 text-right">
+      <div class="p-4 border rounded shadow dark:border-gray-600 transition">تعظيم الاستفادة من الموارد وتحقيق أرباح بيئية</div>
+      <div class="p-4 border rounded shadow dark:border-gray-600 transition">تحويل التحديات إلى فرص بتكنولوجيا المعلومات الخضراء</div>
+      <div class="p-4 border rounded shadow dark:border-gray-600 transition">تصنيع المنتجات محليًا بنسبة 100% بأيدٍ مصرية</div>
+    </div>
+  </section>
+
+  <!-- 🔹 Services -->
+  <section class="py-12 px-6 bg-gray-100 dark:bg-gray-900 text-center transition">
+    <h3 class="text-2xl font-bold mb-8">📦 خدماتنا المتكاملة</h3>
+    <div class="grid md:grid-cols-3 gap-6 text-right">
+      <div class="bg-white dark:bg-gray-800 p-4 rounded shadow transition">
+        <h4 class="font-bold mb-2">♻️ تدوير المخلفات الإلكترونية</h4>
+        <p>حلول إدارة مستدامة للمخلفات</p>
+      </div>
+      <div class="bg-white dark:bg-gray-800 p-4 rounded shadow transition">
+        <h4 class="font-bold mb-2">🖨️ إعادة تصنيع الأحبار</h4>
+        <p>منتجات SpearInk عالية الجودة</p>
+      </div>
+      <div class="bg-white dark:bg-gray-800 p-4 rounded shadow transition">
+        <h4 class="font-bold mb-2">🔒 التخلص الآمن من البيانات</h4>
+        <p>تدمير البيانات الحساسة وفق معايير عالمية</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🔹 Achievements -->
+  <section class="py-12 px-6 bg-white dark:bg-gray-800 text-center transition">
+    <h3 class="text-2xl font-bold mb-6">📊 إنجازاتنا بالأرقام</h3>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-green-800 dark:text-green-300 text-xl font-bold">
+      <div>100%<br/><span class="text-sm text-gray-600 dark:text-gray-300">عمالة مصرية</span></div>
+      <div>50%<br/><span class="text-sm text-gray-600 dark:text-gray-300">توفير في التكلفة</span></div>
+      <div>30%<br/><span class="text-sm text-gray-600 dark:text-gray-300">تقليل البصمة الكربونية</span></div>
+      <div>95%<br/><span class="text-sm text-gray-600 dark:text-gray-300">جودة المنتج</span></div>
+    </div>
+  </section>
+
+  <!-- 🔹 Partners -->
+  <section class="py-12 px-6 bg-gray-50 dark:bg-gray-900 text-center transition">
+    <h3 class="text-2xl font-bold mb-4">🌍 شركاؤنا الاستراتيجيون</h3>
+    <p class="mb-8">نفخر بشراكاتنا مع جهات دولية في مجال التكنولوجيا البيئية</p>
+    <div class="flex flex-wrap justify-center gap-8">
+      <div class="bg-white dark:bg-gray-800 p-4 rounded shadow w-64 transition">
+        <h4 class="font-bold">Eco Avanti Gard</h4>
+        <p>🇮🇹 إيطاليا</p>
+        <p>شريك في الحلول البيئية</p>
+      </div>
+      <div class="bg-white dark:bg-gray-800 p-4 rounded shadow w-64 transition">
+        <h4 class="font-bold">Chimican Canada</h4>
+        <p>🇨🇦 كندا</p>
+        <p>شريك في الكيماويات البيئية</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🔹 Footer -->
+  <footer class="bg-green-800 text-white text-center py-6 transition">
+    <p>© 2025 دكتور وي - جميع الحقوق محفوظة</p>
+    <p class="mt-2 text-sm">📞 01274172444 | 📧 Essam@drweee.com</p>
+  </footer>
+
+  <script>
+    function toggleDarkMode() {
+      const html = document.documentElement;
+      const circle = document.getElementById('switchCircle');
+      const sun = document.getElementById('sunIcon');
+      const moon = document.getElementById('moonIcon');
+
+      html.classList.toggle('dark');
+
+      if (html.classList.contains('dark')) {
+        circle.style.left = 'calc(100% - 28px)';
+        sun.classList.add('hidden');
+        moon.classList.remove('hidden');
+      } else {
+        circle.style.left = '4px';
+        sun.classList.remove('hidden');
+        moon.classList.add('hidden');
+      }
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const html = document.documentElement;
+      const toggle = document.getElementById('themeToggle');
+      const circle = document.getElementById('switchCircle');
+      const sun = document.getElementById('sunIcon');
+      const moon = document.getElementById('moonIcon');
+
+      if (html.classList.contains('dark')) {
+        toggle.checked = true;
+        circle.style.left = 'calc(100% - 28px)';
+        sun.classList.add('hidden');
+        moon.classList.remove('hidden');
+      } else {
+        circle.style.left = '4px';
+        sun.classList.remove('hidden');
+        moon.classList.add('hidden');
+      }
+    });
+  </script>
+</body>
+</html>
