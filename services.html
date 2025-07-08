@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services - دكتور وي</title>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Tajawal', sans-serif;
+      scroll-behavior: smooth;
+    }
+    .glass {
+      backdrop-filter: blur(12px);
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 50%;
+      transition: all 0.3s ease;
+    }
+    #sidebar.show {
+      display: flex !important;
+      animation: slideInLeft 0.4s ease forwards;
+    }
+    @keyframes slideInLeft {
+      from {
+        transform: translateX(-150%);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
+
+<!-- الزر العائم الجانبي على اليسار -->
+<div class="fixed top-4 left-4 z-50">
+  <div id="navToggle" class="w-14 h-14 glass flex items-center justify-center shadow-lg cursor-pointer">
+    <span class="text-green-600 text-3xl">🌿</span>
+  </div>
+  <div id="sidebar" class="hidden absolute top-0 left-20 flex-col bg-white/20 backdrop-blur-md text-green-900 dark:text-white p-4 mt-2 rounded-xl shadow-xl w-52">
+    <a href="index.html" class="mb-2 hover:text-green-500">الرئيسية</a>
+    <a href="about.html" class="mb-2 hover:text-green-500">من نحن</a>
+    <a href="services.html" class="mb-2 hover:text-green-500">الخدمات</a>
+    <a href="franchise.html" class="mb-2 hover:text-green-500">الفرنشايز</a>
+    <a href="contact.html" class="hover:text-green-500">اتصل بنا</a>
+  </div>
+</div>
+
+<!-- 📨 صفحة الخدمات -->
+<section class="relative min-h-screen px-4 pt-44 pb-20 text-right">
+  <!-- خلفية -->
+  <div class="absolute inset-0 bg-cover bg-center opacity-70" style="background-image: url('https://wallpapers.com/images/hd/recycling-pictures-1920-x-940-8vz81njcx8kyi5ye.jpg');"></div>
+  <div class="absolute inset-0 bg-black opacity-40"></div>
+
+  <!-- المحتوى -->
+  <div class="relative z-10 max-w-5xl mx-auto text-white">
+    <h2 class="text-2xl font-bold text-center mb-10">📦 خدماتنا في الأحبار والطباعة</h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
+      <div class="bg-white/10 backdrop-blur-md p-6 rounded-xl">
+        <h3 class="font-bold mb-2">♻️ إعادة تصنيع الخراطيش</h3>
+        <p>تفكيك وتجديد خراطيش الطباعة بجودة عالية.</p>
+      </div>
+      <div class="bg-white/10 backdrop-blur-md p-6 rounded-xl">
+        <h3 class="font-bold mb-2">🖨️ إعادة تعبئة الأحبار</h3>
+        <p>خدمة دقيقة وسريعة لتوفير التكاليف وتقليل النفايات.</p>
+      </div>
+      <div class="bg-white/10 backdrop-blur-md p-6 rounded-xl">
+        <h3 class="font-bold mb-2">🔧 صيانة الطابعات</h3>
+        <p>فحص وإصلاح أعطال الطباعة بجميع الموديلات.</p>
+      </div>
+      <div class="bg-white/10 backdrop-blur-md p-6 rounded-xl">
+        <h3 class="font-bold mb-2">📊 تقارير وتقليل التكلفة</h3>
+        <p>حلول مبتكرة لخفض مصاريف الطباعة وتحسين الاستدامة.</p>
+      </div>
+    </div>
+
+    <!-- زر الحجز -->
+    <div class="text-center mt-10">
+      <a href="https://wa.me/201234567890" target="_blank" class="inline-block px-6 py-3 bg-green-600 text-white rounded-md shadow-lg hover:bg-green-700 transition">
+        احجز خدمتك الآن
+      </a>
+    </div>
+  </div>
+</section>
+
+<script>
+  const navToggle = document.getElementById("navToggle");
+  const sidebar = document.getElementById("sidebar");
+
+  navToggle.addEventListener("click", (e) => {
+    sidebar.classList.toggle("show");
+    e.stopPropagation();
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!sidebar.contains(e.target) && !navToggle.contains(e.target)) {
+      sidebar.classList.remove("show");
+    }
+  });
+</script>
+
+</body>
+</html>

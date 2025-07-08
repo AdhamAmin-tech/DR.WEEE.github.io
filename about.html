@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About - دكتور وي</title>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Tajawal', sans-serif;
+      scroll-behavior: smooth;
+    }
+    .glass {
+      backdrop-filter: blur(12px);
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 50%;
+      transition: all 0.3s ease;
+    }
+    #sidebar.show {
+      display: flex !important;
+      animation: slideInLeft 0.4s ease forwards;
+    }
+    @keyframes slideInLeft {
+      from {
+        transform: translateX(-150%);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
+
+<!-- الزر العائم الجانبي على اليسار -->
+<div class="fixed top-4 left-4 z-50">
+  <div id="navToggle" class="w-14 h-14 glass flex items-center justify-center shadow-lg cursor-pointer">
+    <span class="text-green-600 text-3xl">🌿</span>
+  </div>
+  <div id="sidebar" class="hidden absolute top-0 left-20 flex-col bg-white/20 backdrop-blur-md text-green-900 dark:text-white p-4 mt-2 rounded-xl shadow-xl w-52">
+    <a href="index.html" class="mb-2 hover:text-green-500">الرئيسية</a>
+    <a href="about.html" class="mb-2 hover:text-green-500">من نحن</a>
+    <a href="services.html" class="mb-2 hover:text-green-500">الخدمات</a>
+    <a href="franchise.html" class="mb-2 hover:text-green-500">الفرنشايز</a>
+    <a href="contact.html" class="hover:text-green-500">اتصل بنا</a>
+  </div>
+</div>
+
+<!-- 👤 من نحن -->
+<section class="relative min-h-screen flex items-center justify-center px-4 pt-44 pb-20">
+  <!-- خلفية -->
+  <div class="absolute inset-0 bg-cover bg-center opacity-70" style="background-image: url('https://wallpapers.com/images/hd/recycling-pictures-1920-x-940-8vz81njcx8kyi5ye.jpg');"></div>
+  <div class="absolute inset-0 bg-black opacity-40"></div>
+
+  <!-- المحتوى الأمامي -->
+  <div class="relative z-10 max-w-xl w-full bg-white/10 backdrop-blur-md rounded-xl p-8 text-white text-center">
+    <h2 class="text-2xl font-bold mb-6">👤 من نحن</h2>
+    <p class="text-lg leading-loose">
+      نحن في <strong>دكتور وي </strong> نركز على تقديم خدمات مستدامة تشمل إعادة تصنيع خراطيش الطابعات، تعبئة الأحبار، والتخلص الآمن من النفايات الإلكترونية.
+      نطمح إلى تقليل البصمة الكربونية وتحقيق وفرة في التكاليف دون المساس بالجودة.
+    </p>
+    <p class="text-lg leading-loose mt-6">
+      تأسست شركتنا بأيدٍ مصرية 100٪، ونعمل بشراكات دولية لنشر الوعي البيئي وتوفير حلول تقنية حديثة تساهم في بناء مستقبل أكثر اخضرارًا.
+    </p>
+  </div>
+</section>
+
+<script>
+  const navToggle = document.getElementById("navToggle");
+  const sidebar = document.getElementById("sidebar");
+
+  navToggle.addEventListener("click", (e) => {
+    sidebar.classList.toggle("show");
+    e.stopPropagation();
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!sidebar.contains(e.target) && !navToggle.contains(e.target)) {
+      sidebar.classList.remove("show");
+    }
+  });
+</script>
+
+</body>
+</html>

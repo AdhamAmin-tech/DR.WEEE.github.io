@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>دكتور وي - البصمة الكربونية</title>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Tajawal', sans-serif;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+    h1, h2, h3 {
+      font-weight: 800;
+    }
+    .glass {
+      backdrop-filter: blur(12px);
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 50%;
+      transition: all 0.3s ease;
+    }
+    .glass-expanded {
+      width: 260px !important;
+      height: auto !important;
+      border-radius: 1rem !important;
+    }
+    #sidebar.show {
+      display: flex !important;
+      animation: slideIn 0.4s ease forwards;
+    }
+    @keyframes slideIn {
+      from {
+        transform: translateX(-150%);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
+
+<!-- 🌿 الزر العائم الجانبي -->
+<div class="fixed top-4 left-4 z-50">
+  <div id="navToggle" class="w-14 h-14 glass flex items-center justify-center shadow-lg cursor-pointer">
+    <span class="text-green-600 text-3xl">🌿</span>
+  </div>
+  <div id="sidebar" class="hidden absolute top-0 left-20 flex-col bg-white/20 backdrop-blur-md text-green-900 dark:text-white p-4 mt-2 rounded-xl shadow-xl w-52">
+    <a href="index.html" class="mb-2 hover:text-green-500">الرئيسية</a>
+    <a href="about.html" class="mb-2 hover:text-green-500">من نحن</a>
+    <a href="services.html" class="mb-2 hover:text-green-500">الخدمات</a>
+    <a href="franchise.html" class="mb-2 hover:text-green-500">الفرنشايز</a>
+    <a href="contact.html" class="hover:text-green-500">اتصل بنا</a>
+  </div>
+</div>
+
+<!-- 🌿 Carbon Footprint Section -->
+<section class="relative flex items-center justify-center px-4 py-20" style="min-height: calc(100vh - 140px);">
+  <div class="absolute inset-0 bg-cover bg-center opacity-70" style="background-image: url('https://wallpapers.com/images/hd/recycling-pictures-1920-x-940-8vz81njcx8kyi5ye.jpg');"></div>
+  <div class="absolute inset-0 bg-black opacity-40"></div>
+  <div class="relative z-10 max-w-xl w-full bg-white/10 backdrop-blur-md rounded-xl p-8 text-white">
+    <h3 class="text-2xl font-bold mb-6 text-center">🌿 احسب بصمتك الكربونية</h3>
+    <form id="carbonForm" class="space-y-4">
+      <div>
+        <label class="block mb-1">عدد الأجهزة المستخدمة:</label>
+        <input type="number" id="devices" required class="w-full p-3 rounded-lg bg-white/30 placeholder-white text-white focus:outline-none" />
+      </div>
+      <div>
+        <label class="block mb-1">مرات الطباعة شهريًا:</label>
+        <input type="number" id="prints" required class="w-full p-3 rounded-lg bg-white/30 placeholder-white text-white focus:outline-none" />
+      </div>
+      <button type="submit" class="bg-green-600 hover:bg-green-700 text-white py-2 px-6 rounded-lg">احسب الآن</button>
+    </form>
+    <div id="carbonResult" class="mt-4 font-bold text-lime-200"></div>
+  </div>
+</section>
+
+<!-- 🧪 Liquid Glass Section -->
+
+<!-- ✅ Footer -->
+<footer class="bg-emarled text-center py-10">
+  <p>© 2025 دكتور وي. جميع الحقوق محفوظة.</p>
+</footer>
+
+<script>
+  const navToggle = document.getElementById("navToggle");
+  const sidebar = document.getElementById("sidebar");
+  navToggle.addEventListener("click", (e) => {
+    sidebar.classList.toggle("show");
+    e.stopPropagation();
+  });
+  document.addEventListener("click", (e) => {
+    if (!sidebar.contains(e.target) && !navToggle.contains(e.target)) {
+      sidebar.classList.remove("show");
+    }
+  });
+
+  // ✅ Dynamic Carbon Calculator
+  document.getElementById("carbonForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+    const devices = parseFloat(document.getElementById("devices").value) || 0;
+    const prints = parseFloat(document.getElementById("prints").value) || 0;
+    const result = devices * 1.5 + prints * 0.2;
+    document.getElementById("carbonResult").innerText = `✅ ناتجك الكربوني يساوي ${result.toFixed(2)} كجم CO2`;
+  });
+</script>
+
+</body>
+</html>
